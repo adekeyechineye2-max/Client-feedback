@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPF3</title>
+  
+  <!-- Updated CSS Link -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- 1. AUTH SCREEN (SIGN UP / SIGN IN FOR BOTH) -->
+  <!-- ========================================== -->
+  <div id="authPage" class="full-screen-wrapper">
+    <div class="signup-container">
+      
+      <!-- Left Hero Section -->
+      <div class="left-hero">
+        <h1 id="heroTitle">Let’s Get Started</h1>
+        <p id="heroDesc">Join SPF3 today to submit customer feedback or log into your business dashboard to manage reviews in real time.</p>
+        
+        <div class="presented-by">
+          presented by <span class="brand-badge">SPF3</span>
+        </div>
+      </div>
+
+      <!-- Right Form Section -->
+      <div class="right-form-section">
+        
+        <div class="form-column">
+          
+          <!-- Role Selector: Customer vs Business Owner -->
+          <div class="role-toggle">
+            <button id="roleCustomerBtn" class="role-btn active" onclick="setRole('customer')">Customer</button>
+            <button id="roleOwnerBtn" class="role-btn" onclick="setRole('owner')">Business Owner</button>
+          </div>
+
+          <h2 id="formTitle">Sign up</h2>
+
+          <form id="authForm" onsubmit="handleAuthSubmit(event)">
+            
+            <!-- Name (Only shown during Sign Up) -->
+            <div id="nameGroup" class="input-line-group">
+              <input type="text" id="userName" placeholder="Your name" required />
+            </div>
+
+            <!-- Email -->
+            <div class="input-line-group">
+              <input type="email" id="userEmail" placeholder="Your Email" required />
+            </div>
+
+            <!-- Password -->
+            <div class="input-line-group">
+              <input type="password" id="userPassword" placeholder="Password" required />
+            </div>
+
+            <!-- Repeat Password (Only shown during Sign Up) -->
+            <div id="confirmPassGroup" class="input-line-group">
+              <input type="password" id="userPasswordConfirm" placeholder="Repeat password" />
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn-green">Sign up</button>
+          </form>
+
+          <!-- Toggle between Sign Up and Sign In -->
+          <div class="already-member">
+            <span id="toggleText">Already a Member?</span> 
+            <a href="#" id="toggleAuthBtn" onclick="toggleAuthMode()">Sign in here</a>
+          </div>
+
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="divider-vertical">
+          <span>OR</span>
+        </div>
+
+        <!-- Social Icons Right Column -->
+        <div class="social-column">
+          <button type="button" class="social-circle" onclick="quickLogin()">f</button>
+          <button type="button" class="social-circle" onclick="quickLogin()">🐦</button>
+          <button type="button" class="social-circle" onclick="quickLogin()">G</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 2. CUSTOMER FEEDBACK FORM                  -->
+  <!-- ========================================== -->
+  <div id="formPage" class="container hidden">
+    <div class="card">
+      <div class="dashboard-header">
+        <h2>We Value Your Feedback</h2>
+        <button class="btn-outline" onclick="showScreen('authPage')">Log Out</button>
+      </div>
+      <p>Please tell us about your experience!</p>
+
+      <form id="feedbackForm">
+        <label for="custName">Your Name</label>
+        <input type="text" id="custName" class="light-input" placeholder="e.g. Jane Doe" required />
+
+        <label for="custRating">Rating</label>
+        <select id="custRating" class="light-input">
+          <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+          <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+          <option value="3">⭐⭐⭐ (3 Stars)</option>
+          <option value="2">⭐⭐ (2 Stars)</option>
+          <option value="1">⭐ (1 Star)</option>
+        </select>
+
+        <label for="custCategory">Category</label>
+        <select id="custCategory" class="light-input">
+          <option value="General">General Comment</option>
+          <option value="Product Bug">Product Bug</option>
+          <option value="Feature Request">Feature Request</option>
+        </select>
+
+        <label for="custMessage">Your Review</label>
+        <textarea id="custMessage" class="light-input" rows="4" placeholder="Type your review here..." required></textarea>
+
+        <button type="submit" class="btn-primary">Submit Feedback</button>
+      </form>
+
+      <div id="successBox" class="hidden text-center">
+        <h3>🎉 Thank You!</h3>
+        <p>Your review has been sent directly to the owner's dashboard.</p>
+        <button class="btn-primary" onclick="resetFeedbackForm()">Submit Another Feedback</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 3. BUSINESS OWNER DASHBOARD                -->
+  <!-- ========================================== -->
+  <div id="dashboardPage" class="container wide-container hidden">
+    <div class="card">
+      <div class="dashboard-header">
+        <h2>SPF3 Owner Dashboard</h2>
+        <button class="btn-outline" onclick="showScreen('authPage')">Log Out</button>
+      </div>
+      <p>Here are all the reviews submitted by your customers in real time:</p>
+
+      <div id="reviewsList" class="reviews-grid"></div>
+    </div>
+  </div>
+
+  <!-- Updated JS Link -->
+  <script src="index.js"></script>
+
+</body>
+</html>

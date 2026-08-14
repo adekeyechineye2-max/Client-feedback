@@ -1,0 +1,338 @@
+/* Base Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d1f12; /* Dark leaf green base */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.wide-container {
+  max-width: 700px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* White Cards for Feedback & Dashboard */
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1, h2 {
+  margin-bottom: 8px;
+}
+
+p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Light Mode Input Styling */
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.light-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #008751;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* ========================================== */
+/* AUTH CONTAINER & TROPICAL STYLING          */
+/* ========================================== */
+.full-screen-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.signup-container {
+  background: linear-gradient(135deg, #102617 0%, #050d08 100%);
+  border-radius: 12px;
+  border: 1px solid #1c3d25;
+  display: flex;
+  min-height: 540px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Left Hero Section */
+.left-hero {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #19331f;
+}
+
+.left-hero h1 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.left-hero p {
+  color: #a3b8aa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.presented-by {
+  margin-top: 40px;
+  font-size: 12px;
+  background: #ffffff;
+  color: #000000;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.brand-badge {
+  color: #008751;
+}
+
+/* Right Form Section */
+.right-form-section {
+  flex: 1.3;
+  padding: 40px 35px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.form-column {
+  flex: 1;
+}
+
+/* Role Selector (Customer vs Owner) */
+.role-toggle {
+  display: flex;
+  background: #08140c;
+  border-radius: 20px;
+  padding: 3px;
+  margin-bottom: 20px;
+  border: 1px solid #1c3d25;
+}
+
+.role-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #839989;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-btn.active {
+  background: #008751;
+  color: #ffffff;
+}
+
+.form-column h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Underlined Input Fields */
+.input-line-group {
+  margin-bottom: 18px;
+}
+
+.input-line-group input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #4a6352;
+  padding: 8px 0;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+}
+
+.input-line-group input::placeholder {
+  color: #839989;
+}
+
+.input-line-group input:focus {
+  border-bottom-color: #00a86b;
+}
+
+/* Solid Green Button */
+.btn-green {
+  width: 100%;
+  background-color: #008751;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-green:hover {
+  background-color: #00a86b;
+}
+
+.already-member {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #839989;
+  text-align: center;
+}
+
+.already-member a {
+  color: #00a86b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Vertical Line with OR */
+.divider-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 200px;
+  padding: 0 10px;
+}
+
+.divider-vertical::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #2a4531;
+}
+
+.divider-vertical span {
+  background: #08140c;
+  padding: 6px 0;
+  font-size: 11px;
+  color: #839989;
+  z-index: 1;
+}
+
+/* Social Buttons Column */
+.social-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-circle:hover {
+  background: #e5e7eb;
+}
+
+/* Dashboard Styling */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reviews-grid {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  border-radius: 8px;
+  color: #000;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.badge {
+  background: #e5e7eb;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+}
